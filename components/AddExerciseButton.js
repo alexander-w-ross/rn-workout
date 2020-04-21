@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableHighlight } from "react-native";
 import Colors from "../constants/Colors";
 import AddExerciseModal from "./AddExerciseModal";
+import { Ionicons } from "@expo/vector-icons";
 
 const AddExerciseButton = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -16,8 +17,11 @@ const AddExerciseButton = (props) => {
         isVisible={modalVisible}
       />
       <View style={styles.button}>
-        <TouchableHighlight onPress={modalOpenHandler}>
-          <Text style={styles.buttonText}>Add New Exercise</Text>
+        <TouchableHighlight
+          onPress={modalOpenHandler}
+          underlayColor={"transparent"}
+        >
+          <Ionicons name="ios-add-circle" size={70} color={Colors.primary} />
         </TouchableHighlight>
       </View>
     </View>
@@ -62,17 +66,9 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   button: {
-    backgroundColor: Colors.primary,
-    paddingVertical: 12,
-    paddingHorizontal: 30,
-    borderRadius: 25,
-    height: 50,
-    marginBottom: 30,
-  },
-  buttonText: {
-    color: "white",
-    // fontFamily: "open-sans",
-    fontSize: 18,
+    height: 80,
+    bottom: 15,
+    right: 10,
   },
 });
 export default AddExerciseButton;

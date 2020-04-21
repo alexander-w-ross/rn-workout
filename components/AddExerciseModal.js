@@ -7,6 +7,7 @@ import {
   Modal,
   TouchableHighlight,
 } from "react-native";
+import Colors from "../constants/Colors";
 
 const AddExerciseModal = (props) => {
   return (
@@ -23,10 +24,13 @@ const AddExerciseModal = (props) => {
           <Text style={styles.modalText}>Hello World!</Text>
 
           <TouchableHighlight
-            style={{ ...styles.openButton, backgroundColor: "#2196F3" }}
+            style={{
+              ...styles.openButton,
+              backgroundColor: Colors.error,
+            }}
             onPress={props.toggleModal}
           >
-            <Text style={styles.textStyle}>Hide Modal</Text>
+            <Text style={styles.textStyle}>Cancel</Text>
           </TouchableHighlight>
         </View>
       </View>
